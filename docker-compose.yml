@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  # PostgreSQL database
+  blox_auth:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    container_name: blox_auth
+    volumes:
+      - .:/code  # mount current directory inside container
+    ports:
+      - "8000:8000"
